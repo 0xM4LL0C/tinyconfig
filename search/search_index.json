@@ -1,1 +1,1 @@
-{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"tinyconfig","text":"<p>[!WARNING] work in progress</p>"},{"location":"changelog/","title":"Changelog","text":"<p>All notable changes to this project will be documented in this file.</p> <p>The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.</p>"},{"location":"changelog/#unreleased","title":"[Unreleased]","text":""}]}
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[]}
