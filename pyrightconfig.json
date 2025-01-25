@@ -1,0 +1,16 @@
+{
+    "typeCheckingMode": "basic",
+    "include": [
+        "src",
+        "tools/"
+    ],
+    "exclude": [
+        "**/.venv",
+        "**/__pycache__",
+    ],
+    "pythonVersion": "3.12",
+    "pythonPlatform": "Linux",
+    "reportMissingTypeStubs": false,
+    "reportOptionalMemberAccess": false,
+    "reportShadowedImports": false
+}

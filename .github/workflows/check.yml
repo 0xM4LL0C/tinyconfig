@@ -1,0 +1,39 @@
+name: Checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "**.py"
+      - ".github/workflows/check.yml"
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install Task
+        uses: arduino/setup-task@v2
+        with:
+          version: "3.x"
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
+      - name: Install requirements
+        run: poetry install
+
+      - name: Install dev requirements
+        run: task dev-install
+
+      - name: lint
+        run: task lint
