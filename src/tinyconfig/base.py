@@ -1,5 +1,5 @@
 import json
-from typing import Any, Self, Type, TypeVar
+from typing import Any, Type, TypeVar
 from dataclasses import dataclass, asdict
 import tomlkit as toml
 import yaml
@@ -9,7 +9,8 @@ __all__ = [
     "BaseConfig",
 ]
 
-T = TypeVar('T', bound='BaseConfig')
+T = TypeVar("T", bound="BaseConfig")
+
 
 @dataclass
 class BaseConfig:
