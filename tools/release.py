@@ -7,11 +7,16 @@ import tomlkit as toml
 import changelog
 from semver import Version
 
+with open("pyproject.toml", "r") as f:
+    pyproject = toml.load(f).unwrap()
 
-with open("version") as f:
-    old_version = Version.parse(f.read())
-    version = old_version
+try:
+    with open("version") as f:
+        old_version = Version.parse(f.read())
+except FileNotFoundError:
+    old_version = Version.parse(pyproject["project"]["version"])
 
+version = old_version
 
 def usage():
     print(
@@ -60,11 +65,7 @@ if choice != "y":
 run_command("task lint && task format")
 
 
-with open("version", "w") as f:
-    f.write(str(version))
 
-with open("pyproject.toml", "r") as f:
-    pyproject = toml.load(f).unwrap()
 pyproject["project"]["version"] = str(version)
 
 with open("pyproject.toml", "w") as f:
