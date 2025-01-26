@@ -10,11 +10,7 @@ from semver import Version
 with open("pyproject.toml", "r") as f:
     pyproject = toml.load(f).unwrap()
 
-try:
-    with open("version") as f:
-        old_version = Version.parse(f.read())
-except FileNotFoundError:
-    old_version = Version.parse(pyproject["project"]["version"])
+old_version = Version.parse(pyproject["project"]["version"])
 
 version = old_version
 
@@ -65,7 +61,6 @@ if choice != "y":
 run_command("task lint && task format")
 
 
-
 pyproject["project"]["version"] = str(version)
 
 with open("pyproject.toml", "w") as f:
@@ -102,7 +97,6 @@ if match := re.match(r"## \[\d+\.\d+\.\d+\] - \d{4}-\d{2}-\d{2}", content):
 
 with open("release_body.md", "w") as f:
     f.write(content)
-
 
 
 run_command("poetry build")
