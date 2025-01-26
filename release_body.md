@@ -1,3 +1,0 @@
-### Added
-
-- `BaseConfig` class
