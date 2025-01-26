@@ -8,6 +8,9 @@
 ![Checks](https://github.com/HamletSargsyan/tinyconfig/actions/workflows/check.yml/badge.svg)
 ![Documentation](https://github.com/HamletSargsyan/tinyconfig/actions/workflows/documentation.yml/badge.svg)
 
+> [!WARNING]
+> work in progress
+
 ## Installation
 
 ```bash
