@@ -2,16 +2,16 @@
 name = "tinyconfig"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Hamlet",email = "hamlets849@gmail.com"}
-]
-license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = [
-    "dacite (>=1.8.1,<2.0.0)"
-]
+dependencies = []
 
+[[project.authors]]
+name = "Hamlet"
+email = "hamlets849@gmail.com"
+
+[project.license]
+text = "MIT"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
